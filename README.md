@@ -7,8 +7,8 @@ Implementation of the code does require an Azure Service Principal with "Contrib
 Additional Information:
 
 API Documentation: https://docs.microsoft.com/en-us/rest/api/
-Registering an Application: https://docs.microsoft.com/en-us/rest/api/#register-your-client-application-with-azure-ad
-NSG API Documentation: https://docs.microsoft.com/en-us/rest/api/virtualnetwork/networksecuritygroups
+<br>Registering an Application: https://docs.microsoft.com/en-us/rest/api/#register-your-client-application-with-azure-ad
+<br>NSG API Documentation: https://docs.microsoft.com/en-us/rest/api/virtualnetwork/networksecuritygroups
 
 Support Policy
 
