@@ -3,6 +3,8 @@
     
     Created by Anthony Eden
     http://MediaRealm.com.au/
+    
+    pglynn - Added code to process input from log forwarding profile on PANW NGFW
 """
 
 import sys, os, httplib, json, urllib, ast
