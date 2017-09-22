@@ -49,7 +49,7 @@ ClientID = str(http.post['ClientID'])[2:-4]
 
 TenantID = str(http.post['TenantID'])[2:-4]
 
-Attacker = str(http.post['Attacker'])[2:-4]
+Attacker = str(http.post['Attacker'])[2:-2]
 
 NetworkSecurityGroupName = str(http.post['NetworkSecurityGroupName'])[2:-4]
 
@@ -81,30 +81,20 @@ AccessToken = datadict['access_token']
 
 Host = 'management.azure.com'
 
-URL = '/subscriptions/' + SubscriptionID + '/resourceGroups/' + ResourceGroupName + '/providers/Microsoft.Network/networkSecurityGroups/' + NetworkSecurityGroupName + '?api-version=2017-08-01'
+URL = '/subscriptions/' + SubscriptionID + '/resourceGroups/' + ResourceGroupName + '/providers/Microsoft.Network/networkSecurityGroups/' + NetworkSecurityGroupName + '/securityRules/' + Attacker + '?api-version=2017-08-01'
 
 Headers = { 'Content-Type': 'application/json', 'Authorization': 'bearer ' + AccessToken }
 
 Body = json.dumps({
-  "location": Region,
   "properties": {
-    "defaultSecurityRules": [],
-    "securityRules": [
-      {
-        "name": Attacker,
-        "properties": {
-          "protocol": "*",
-          "sourceAddressPrefix": Attacker,
-          "destinationAddressPrefix": "*",
-          "access": "Deny",
-          "destinationPortRange": "*",
-          "sourcePortRange": "*",
-          "priority": 100,
-          "direction": "Outbound",
-          "provisioningState": "Updating"
-        }
-      }
-    ]
+    "protocol": "*",
+    "sourceAddressPrefix": Attacker,
+    "destinationAddressPrefix": "*",
+    "access": "Deny",
+    "destinationPortRange": "*",
+    "sourcePortRange": "*",
+    "priority": 100,
+    "direction": "Outbound"
   }
 })
 
