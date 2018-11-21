@@ -38,7 +38,7 @@ print "--- OTHER ENVIRONMENTAL VARIABLES ---"
 for x in http.env:
     print x
 print
-
+"""
 ARMResource = 'https://management.core.windows.net/'
 
 ClientSecret = str(http.post['ClientSecret'])[2:-4]
