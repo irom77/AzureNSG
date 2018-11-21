@@ -22,8 +22,8 @@ http = HTTPHelper()
 #print data
 
 # All these print statements get sent to the Azure Functions live log
-print "OK"
-"""
+print "Welcome"
+
 print "--- GET ---"
 print http.get
 print
@@ -40,7 +40,7 @@ print "--- OTHER ENVIRONMENTAL VARIABLES ---"
 for x in http.env:
     print x
 print
-
+"""
 ARMResource = 'https://management.core.windows.net/'
 
 ClientSecret = str(http.post['ClientSecret'])[2:-4]
