@@ -24,16 +24,12 @@ http = HTTPHelper()
 # All these print statements get sent to the Azure Functions live log
 print "Welcome"
 
-print "--- GET ---"
-print http.get
+print "--- HEADERS ---"
+print http.headers
 print
 
 print "--- POST ---"
 print http.post
-print
-
-print "--- HEADERS ---"
-print http.headers
 print
 """
 print "--- OTHER ENVIRONMENTAL VARIABLES ---"
